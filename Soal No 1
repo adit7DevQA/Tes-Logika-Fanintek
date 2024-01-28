@@ -1,0 +1,29 @@
+function hitungPasangKaosKaki(socks) {
+    let count = 0;
+    let sockMap = {};
+
+    // Menghitung jumlah masing-masing jenis kaos kaki
+    for (let sock of socks) {
+        if (sockMap[sock]) {
+            sockMap[sock]++;
+        } else {
+            sockMap[sock] = 1;
+        }
+    }
+
+    // Menghitung jumlah pasang kaos kaki
+    for (let key in sockMap) {
+        count += Math.floor(sockMap[key] / 2);
+    }
+
+    return count;
+}
+
+// Contoh penggunaan
+const socksA = [10, 20, 20, 10, 10, 30, 50, 10, 20];
+const socksB = [6, 5, 2, 3, 5, 2, 2, 1, 1, 5, 1, 3, 3, 3, 5];
+const socksC = [1, 1, 3, 1, 2, 1, 3, 3, 3, 3];
+
+console.log(hitungPasangKaosKaki(socksA)); // Output: 3
+console.log(hitungPasangKaosKaki(socksB)); // Output: 6
+console.log(hitungPasangKaosKaki(socksC)); // Output: 4
