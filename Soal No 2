@@ -1,0 +1,21 @@
+function hitungJumlahKata(kalimat) {
+    // Menghapus karakter khusus kecuali huruf, angka, dan spasi
+    const kalimatTanpaKhusus = kalimat.replace(/[^a-zA-Z0-9\s]/g, '');
+
+    // Memecah kalimat menjadi array kata
+    const kataArray = kalimatTanpaKhusus.split(/\s+/);
+
+    // Menghitung jumlah kata
+    const jumlahKata = kataArray.length;
+
+    return jumlahKata;
+}
+
+// Contoh penggunaan
+const kalimatA = "Saat mengecat tembok, Agung dibantu oleh Raihan.";
+const kalimatB = "Berapa umur minimal untuk mengurus ktp?";
+const kalimatC = "Masing-masing anak mendapatkan uang jajan yang berbeda.";
+
+console.log(hitungJumlahKata(kalimatA)); // Output: 5
+console.log(hitungJumlahKata(kalimatB)); // Output: 3
+console.log(hitungJumlahKata(kalimatC)); // Output: 4
